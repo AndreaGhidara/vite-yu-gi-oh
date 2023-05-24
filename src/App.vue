@@ -1,15 +1,13 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import Card from './components/Card.vue'
 
 import { store } from './data/store';
 
 export default {
   components: {
     AppHeader,
-    AppMain,
-    Card,
+    AppMain
 },
   data() {
     return {

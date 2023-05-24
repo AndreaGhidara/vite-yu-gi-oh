@@ -18,9 +18,7 @@ export const store = reactive({
             .then(response => {
                 this.deckCard = response.data.data
                 this.resultsCardNumber = response.data.data.length
-                console.log("funziona", this.deckCard);
-                // console.log(this.deckCard);
-                console.log(response.data.data[0]);
+                console.log(response.data.data);
             })
             .catch(error => {
                 console.error(error);
@@ -29,17 +27,12 @@ export const store = reactive({
             axios.get(this.customApi + this.valoreOptions)
                 .then(response => {
                     console.log("funziona");
-                    console.log("funziona", response.data.data.length);
                     this.deckCard = response.data.data
                     this.resultsCardNumber = response.data.data.length
-                    console.log(response.data.data[0]);
                 })
                 .catch(error => {
                     console.error(error);
                 })
         }
     },
-    debug(){
-        this.callApi();
-    }
 });

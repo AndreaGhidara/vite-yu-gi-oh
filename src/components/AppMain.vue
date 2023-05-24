@@ -20,27 +20,45 @@ export default {
 
 <template>
   <div>
+
     <div>
-      <select @change="store.callApi()" v-model="store.valoreOptions" name="" id="">
-        <option v-for="test in store.typeCard" :value="test">
-          {{ test }}
-        </option>
-      </select>
+      <!--==================
+            SelectZone
+      ====================-->
+      <div class="container">
+        <div class="row py-3">
+          <div class="col d-flex">
+            <select v-model="store.valoreOptions" class="form-select m-1 text-white bg-success" aria-label="Default select example">
+              <option v-for="test in store.typeCard" :value="test" selected>{{ test }}</option>
+            </select>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button @click="store.callApi()" class="btn btn-primary w-50">ClickMe</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h2>Carte trovate : {{ store.resultsCardNumber }}</h2>
-    <div class="d-flex flex-wrap justify-content-center">
-
-      <Card v-for="card in store.deckCard" :description="card.desc" :image="card.card_images[0].image_url"
-        :title="card.name" />
-
+    <!--==================
+            Carte Trovate
+    ====================-->
+    <div class="container">
+      <h2>Carte trovate : {{ store.resultsCardNumber }}</h2>
     </div>
+
+    <!--==================
+            CARD
+    ====================-->
+    <div class="container">
+      <div class="row row-cols-3 d-flex justify-content-between flex-wrap">
+        <Card v-for="card in store.deckCard" :description="card.desc" :image="card.card_images[0].image_url"
+          :title="card.name" />
+      </div>
+    </div>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
-div {
-  background-color: royalblue;
 
-}
 </style>

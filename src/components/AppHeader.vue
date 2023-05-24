@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <div class="d-flex align-items-center p-2">
+  <div class="container d-flex align-items-center p-2">
     <img src="/public/logo.webp" alt="">
     <h1>Yu-Gi-Ho Api</h1>
   </div>
