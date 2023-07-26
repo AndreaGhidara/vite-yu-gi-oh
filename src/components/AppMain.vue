@@ -27,13 +27,16 @@ export default {
       ====================-->
       <div class="container">
         <div class="row py-3">
-          <div class="col d-flex">
-            <select v-model="store.valoreOptions" class="form-select m-1 text-white bg-success" aria-label="Default select example">
-              <option v-for="test in store.typeCard" :value="test" selected>{{ test }}</option>
+          <div class="col d-flex align-items-center">
+            <label for="tipology">Seleziona una tipologia</label>
+            <select id="tipology" name="tipology" v-model="store.valoreOptions" class="form-select m-1 w-50">
+              <template v-for="typeCard in store.typeCard" :key="typeCard">
+                <option :value="typeCard">{{ typeCard }}</option>
+              </template>
             </select>
           </div>
           <div class="col d-flex justify-content-end">
-            <button @click="store.callApi()" class="btn btn-primary w-50">ClickMe</button>
+            <button @click="store.callApi()" class="btn btn-primary w-25">Serch</button>
           </div>
         </div>
       </div>
@@ -50,10 +53,14 @@ export default {
             CARD
     ====================-->
     <div class="container">
-      <div class="row row-cols-3 d-flex justify-content-between flex-wrap">
-        <Card v-for="card in store.deckCard" :description="card.desc" :image="card.card_images[0].image_url"
-          :title="card.name" />
-      </div>
+      <div class="row row-cols-5 g-5 d-flex justify-content-between flex-wrap">
+        <template v-for="card in store.deckCard" :key="card">
+          <div class="col">
+            <Card :description="card.desc" :image="card.card_images[0].image_url"
+              :title="card.name" />
+          </div>
+        </template>
+        </div>
     </div>
 
   </div>
