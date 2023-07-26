@@ -25,11 +25,11 @@ export default {
       <!--==================
             SelectZone
       ====================-->
-      <div class="container">
-        <div class="row py-3">
+      <div class="container-fluid px-5">
+        <div class="row">
           <div class="col d-flex align-items-center">
-            <label for="tipology">Seleziona una tipologia</label>
-            <select id="tipology" name="tipology" v-model="store.valoreOptions" class="form-select m-1 w-50">
+            <label for="tipology" class="fs-5">Seleziona una tipologia</label>
+            <select id="tipology" name="tipology" v-model="store.valoreOptions" class="form-select m-1 w-25">
               <template v-for="typeCard in store.typeCard" :key="typeCard">
                 <option :value="typeCard">{{ typeCard }}</option>
               </template>
@@ -45,15 +45,15 @@ export default {
     <!--==================
             Carte Trovate
     ====================-->
-    <div class="container">
+    <div class="container-fluid px-5">
       <h2>Carte trovate : {{ store.resultsCardNumber }}</h2>
     </div>
 
     <!--==================
             CARD
     ====================-->
-    <div class="container">
-      <div class="row row-cols-5 g-5 d-flex justify-content-between flex-wrap">
+    <div class="container-fluid p-5">
+      <div class="row row-cols-6 g-5 d-flex flex-wrap">
         <template v-for="card in store.deckCard" :key="card">
           <div class="col">
             <Card :description="card.desc" :image="card.card_images[0].image_url"

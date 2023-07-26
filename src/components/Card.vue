@@ -41,7 +41,7 @@ export default {
 
 <div class="card">
   <img class="img-fluid" :src="image" alt="">
-  <div class="titleContainer">
+  <div class="titleContainer text-center">
     <span class="fw-bold">{{ title }}</span>
   </div>
 </div>
